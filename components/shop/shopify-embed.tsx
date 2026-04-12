@@ -1,28 +1,64 @@
-import { hasShopifyConfig, shopifyConfig, ShopifyEmbedMode } from "@/lib/shopify-config";
+"use client";
+
+import { useEffect, useMemo, useRef } from "react";
+import { SHOPIFY_BUY_BUTTON_SCRIPT_SRC, shopifyConfig, ShopifyProductKey } from "@/lib/shopify-config";
+
+type ShopifyEmbedType = "collection" | "product";
 
 interface ShopifyEmbedProps {
-  mode: ShopifyEmbedMode;
+  type: ShopifyEmbedType;
+  productKey?: ShopifyProductKey;
+  className?: string;
 }
 
-const modeLabel: Record<ShopifyEmbedMode, string> = {
-  "buy-button": "Shopify Buy Button",
-  "direct-checkout": "Direct Checkout Link",
-  collection: "Collection Embed"
-};
+export function ShopifyEmbed({ type, productKey, className = "" }: ShopifyEmbedProps) {
+  const mountRef = useRef<HTMLDivElement>(null);
 
-export function ShopifyEmbed({ mode }: ShopifyEmbedProps) {
+  const embedCode = useMemo(() => {
+    if (type === "collection") {
+      return shopifyConfig.embedPlaceholders.collection;
+    }
+
+    if (!productKey) {
+      return "";
+    }
+
+    return shopifyConfig.embedPlaceholders.products[productKey] ?? "";
+  }, [productKey, type]);
+
+  useEffect(() => {
+    if (!mountRef.current || !embedCode.trim()) {
+      return;
+    }
+
+    mountRef.current.innerHTML = embedCode;
+
+    if (!document.querySelector(`script[src="${SHOPIFY_BUY_BUTTON_SCRIPT_SRC}"]`)) {
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = SHOPIFY_BUY_BUTTON_SCRIPT_SRC;
+      script.dataset.shopifyBuyButton = "true";
+      document.body.appendChild(script);
+    }
+
+    return () => {
+      if (mountRef.current) {
+        mountRef.current.innerHTML = "";
+      }
+    };
+  }, [embedCode]);
+
   return (
-    <section className="rounded-lg border border-dashed border-warning/40 bg-warning/5 p-5">
-      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-warning">Shopify Ready</p>
-      <h3 className="mt-2 text-xl font-bold text-ash">{modeLabel[mode]} Placeholder</h3>
-      <p className="mt-2 text-sm text-ash/70">
-        Embedded commerce is not active yet. This component is prepared to consume Shopify storefront values and render
-        the selected mode when integration starts.
+    <section
+      className={`rounded-2xl border border-dashed border-warning/40 bg-warning/5 p-6 shadow-[inset_0_0_30px_rgba(247,210,30,0.08)] ${className}`.trim()}
+    >
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-warning">Shopify Embed Zone</p>
+      <p className="mt-2 text-sm text-ash/75">
+        Paste Shopify {type === "collection" ? "collection" : "product"} embed code inside
+        <code className="mx-1 rounded bg-ink px-1.5 py-0.5 text-warning">lib/shopify-config.ts</code>
+        placeholders. Rendering is client-only to avoid SSR issues.
       </p>
-      <div className="mt-4 space-y-1 text-xs text-ash/60">
-        <p>Domain configured: {hasShopifyConfig ? "Yes" : "No"}</p>
-        <p>Script source: {shopifyConfig.buyButtonScriptSrc}</p>
-      </div>
+      <div ref={mountRef} className="mt-4 min-h-10" aria-live="polite" />
     </section>
   );
 }

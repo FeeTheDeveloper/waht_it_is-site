@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { siteConfig } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -34,11 +36,21 @@ export function Hero() {
               <div className="absolute inset-0 opacity-60" />
               <div className="relative flex min-h-[20rem] flex-col justify-between rounded-xl border border-ash/15 bg-ink/70 p-6 backdrop-blur-sm">
                 <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.18em] text-warning/85">
-                  <span>Logo Zone</span>
-                  <span>Impact Ready</span>
+                  <span>Featured Mark</span>
+                  <span>Brand Signal</span>
                 </div>
-                <p className="max-w-xs text-3xl font-black uppercase leading-none text-ash sm:text-4xl">Drop in cracked logo asset here</p>
-                <p className="text-sm uppercase tracking-[0.14em] text-ash/60">Reserved for central mark / campaign graphic</p>
+                <div className="relative mx-auto w-full max-w-[24rem]">
+                  <Image
+                    src={siteConfig.logoAssetPath}
+                    alt="What It Is Clothing brand mark"
+                    width={900}
+                    height={900}
+                    className="h-auto w-full object-contain"
+                    sizes="(max-width: 1024px) 70vw, 32vw"
+                    priority
+                  />
+                </div>
+                <p className="text-center text-sm uppercase tracking-[0.14em] text-ash/60">No filter. No apologies.</p>
               </div>
             </div>
           </div>
