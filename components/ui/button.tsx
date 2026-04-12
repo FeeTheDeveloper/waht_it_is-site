@@ -24,21 +24,21 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-inferno text-ink border-inferno hover:bg-ember hover:border-ember focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warning",
+    "border-inferno/70 bg-gradient-to-r from-inferno via-[#ff7a1f] to-warning text-ink shadow-[0_0_35px_rgba(242,92,5,0.45)] hover:-translate-y-0.5 hover:shadow-[0_0_45px_rgba(247,210,30,0.45)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warning",
   secondary:
-    "bg-ink text-ash border-ash/30 hover:border-warning hover:text-warning focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warning",
+    "border-warning/60 bg-[linear-gradient(120deg,rgba(247,210,30,0.14),rgba(242,92,5,0.04))] text-warning hover:-translate-y-0.5 hover:border-warning hover:bg-[linear-gradient(120deg,rgba(247,210,30,0.22),rgba(242,92,5,0.1))] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warning",
   ghost:
-    "bg-transparent text-ash border-transparent hover:text-warning focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warning"
+    "border-transparent bg-transparent text-ash/90 hover:text-warning focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warning"
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  md: "px-4 py-2.5 text-sm",
-  lg: "px-6 py-3 text-base"
+  md: "px-5 py-2.5 text-sm",
+  lg: "px-7 py-3.5 text-base"
 };
 
 function getClasses({ className = "", variant = "primary", size = "md" }: BaseButtonProps) {
   return [
-    "inline-flex items-center justify-center rounded-md border font-semibold uppercase tracking-[0.08em] transition-colors duration-150",
+    "inline-flex items-center justify-center rounded-md border font-semibold uppercase tracking-[0.11em] transition-all duration-200",
     variantStyles[variant],
     sizeStyles[size],
     className
@@ -50,8 +50,8 @@ function getClasses({ className = "", variant = "primary", size = "md" }: BaseBu
 export function Button(props: ButtonProps) {
   const classes = getClasses(props);
 
-  if ("href" in props) {
-    const { href, children, target, rel } = props;
+  if ("href" in props && typeof props.href === "string") {
+    const { href, children, target, rel } = props as ButtonAsLink;
 
     return (
       <Link href={href} className={classes} target={target} rel={rel}>
@@ -60,7 +60,7 @@ export function Button(props: ButtonProps) {
     );
   }
 
-  const { children, type = "button", ...buttonProps } = props;
+  const { children, type = "button", ...buttonProps } = props as ButtonAsButton;
 
   return (
     <button type={type} className={classes} {...buttonProps}>
