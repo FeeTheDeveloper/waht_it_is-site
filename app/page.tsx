@@ -2,6 +2,9 @@ import { Hero } from "@/components/brand/hero";
 import { SectionShell } from "@/components/brand/section-shell";
 import { FeaturedProduct } from "@/components/shop/featured-product";
 import { Button } from "@/components/ui/button";
+import { shopifyConfig } from "@/lib/shopify-config";
+
+const featuredDrop = shopifyConfig.products[0];
 
 export default function HomePage() {
   return (
@@ -16,8 +19,11 @@ export default function HomePage() {
         className="relative overflow-hidden"
       >
         <FeaturedProduct
-          title="Approach Cautiously Tee"
-          description="High-impact graphic tee representing raw energy and emotion. Premium cotton, bold print, streetwear fit."
+          title={featuredDrop.name}
+          description={featuredDrop.description}
+          price={featuredDrop.price}
+          checkoutUrl={shopifyConfig.featuredProductCheckoutUrl}
+          image={featuredDrop.image}
         />
       </SectionShell>
 
