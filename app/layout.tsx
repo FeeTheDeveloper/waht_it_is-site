@@ -33,10 +33,10 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="bg-ink antialiased">
         <div className="flex min-h-screen flex-col bg-ink">
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 overflow-x-clip">{children}</main>
           <SiteFooter />
         </div>
       </body>

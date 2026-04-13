@@ -1,0 +1,64 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1200" fill="#F3EEE6"/>
+  <defs>
+    <filter id="shirt-shadow" x="-40" y="-20" width="760" height="1040" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(20 20) scale(0.52)" filter="url(#shirt-shadow)">
+    <path d="M170 120L255 70C286 57 320 50 354 50H446C480 50 514 57 545 70L630 120L590 230L520 194V930H280V194L210 230L170 120Z" fill="#D81F1F"/>
+    <ellipse cx="400" cy="90" rx="92" ry="30" fill="none" stroke="#F7E6D7" stroke-opacity="0.25" stroke-width="12"/>
+    <text x="400" y="190" text-anchor="middle" fill="#FFFFFF" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="86" font-weight="900" letter-spacing="2">APPROACH</text>
+    <text x="400" y="278" text-anchor="middle" fill="#F7D21E" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="96" font-weight="900" letter-spacing="2">CAUTIOUSLY</text>
+    <path d="M214 165L260 165L238 115L214 165Z" fill="#F7D21E"/>
+    <path d="M542 165L588 165L566 115L542 165Z" fill="#F7D21E"/>
+    <text x="238" y="156" text-anchor="middle" fill="#0B0B0F" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="32" font-weight="900">!</text>
+    <text x="566" y="156" text-anchor="middle" fill="#0B0B0F" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="32" font-weight="900">!</text>
+    <image href="/what-it-is-logo.png" x="235" y="315" width="330" height="330" preserveAspectRatio="xMidYMid meet"/>
+    <text x="400" y="735" text-anchor="middle" fill="#FFFFFF" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="70" font-weight="900" letter-spacing="1">I DON'T CONTROL</text>
+    <text x="400" y="815" text-anchor="middle" fill="#F7D21E" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="82" font-weight="900" letter-spacing="1">MY ANGER WELL!</text>
+  </g>
+
+  <g transform="translate(600 20) scale(0.52)" filter="url(#shirt-shadow)">
+    <path d="M170 120L255 70C286 57 320 50 354 50H446C480 50 514 57 545 70L630 120L590 230L520 194V930H280V194L210 230L170 120Z" fill="#FAF8F3"/>
+    <ellipse cx="400" cy="90" rx="92" ry="30" fill="none" stroke="#1A1A1A" stroke-opacity="0.15" stroke-width="12"/>
+    <text x="400" y="190" text-anchor="middle" fill="#1A1A1A" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="86" font-weight="900" letter-spacing="2">APPROACH</text>
+    <text x="400" y="278" text-anchor="middle" fill="#CF241D" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="96" font-weight="900" letter-spacing="2">CAUTIOUSLY</text>
+    <path d="M214 165L260 165L238 115L214 165Z" fill="#F7D21E"/>
+    <path d="M542 165L588 165L566 115L542 165Z" fill="#F7D21E"/>
+    <text x="238" y="156" text-anchor="middle" fill="#0B0B0F" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="32" font-weight="900">!</text>
+    <text x="566" y="156" text-anchor="middle" fill="#0B0B0F" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="32" font-weight="900">!</text>
+    <image href="/what-it-is-logo.png" x="235" y="315" width="330" height="330" preserveAspectRatio="xMidYMid meet"/>
+    <text x="400" y="735" text-anchor="middle" fill="#1A1A1A" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="70" font-weight="900" letter-spacing="1">I DON'T CONTROL</text>
+    <text x="400" y="815" text-anchor="middle" fill="#CF241D" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="82" font-weight="900" letter-spacing="1">MY ANGER WELL!</text>
+  </g>
+
+  <g transform="translate(20 610) scale(0.52)" filter="url(#shirt-shadow)">
+    <path d="M170 120L255 70C286 57 320 50 354 50H446C480 50 514 57 545 70L630 120L590 230L520 194V930H280V194L210 230L170 120Z" fill="#1E4FD0"/>
+    <ellipse cx="400" cy="90" rx="92" ry="30" fill="none" stroke="#F7E6D7" stroke-opacity="0.25" stroke-width="12"/>
+    <text x="400" y="190" text-anchor="middle" fill="#FFFFFF" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="86" font-weight="900" letter-spacing="2">APPROACH</text>
+    <text x="400" y="278" text-anchor="middle" fill="#CF241D" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="96" font-weight="900" letter-spacing="2">CAUTIOUSLY</text>
+    <path d="M214 165L260 165L238 115L214 165Z" fill="#F7D21E"/>
+    <path d="M542 165L588 165L566 115L542 165Z" fill="#F7D21E"/>
+    <text x="238" y="156" text-anchor="middle" fill="#0B0B0F" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="32" font-weight="900">!</text>
+    <text x="566" y="156" text-anchor="middle" fill="#0B0B0F" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="32" font-weight="900">!</text>
+    <image href="/what-it-is-logo.png" x="235" y="315" width="330" height="330" preserveAspectRatio="xMidYMid meet"/>
+    <text x="400" y="735" text-anchor="middle" fill="#FFFFFF" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="70" font-weight="900" letter-spacing="1">I DON'T CONTROL</text>
+    <text x="400" y="815" text-anchor="middle" fill="#CF241D" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="82" font-weight="900" letter-spacing="1">MY ANGER WELL!</text>
+  </g>
+
+  <g transform="translate(600 610) scale(0.52)" filter="url(#shirt-shadow)">
+    <path d="M170 120L255 70C286 57 320 50 354 50H446C480 50 514 57 545 70L630 120L590 230L520 194V930H280V194L210 230L170 120Z" fill="#A2A09D"/>
+    <ellipse cx="400" cy="90" rx="92" ry="30" fill="none" stroke="#1A1A1A" stroke-opacity="0.15" stroke-width="12"/>
+    <text x="400" y="190" text-anchor="middle" fill="#1A1A1A" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="86" font-weight="900" letter-spacing="2">APPROACH</text>
+    <text x="400" y="278" text-anchor="middle" fill="#CF241D" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="96" font-weight="900" letter-spacing="2">CAUTIOUSLY</text>
+    <path d="M214 165L260 165L238 115L214 165Z" fill="#F7D21E"/>
+    <path d="M542 165L588 165L566 115L542 165Z" fill="#F7D21E"/>
+    <text x="238" y="156" text-anchor="middle" fill="#0B0B0F" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="32" font-weight="900">!</text>
+    <text x="566" y="156" text-anchor="middle" fill="#0B0B0F" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="32" font-weight="900">!</text>
+    <image href="/what-it-is-logo.png" x="235" y="315" width="330" height="330" preserveAspectRatio="xMidYMid meet"/>
+    <text x="400" y="735" text-anchor="middle" fill="#111111" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="70" font-weight="900" letter-spacing="1">I DON'T CONTROL</text>
+    <text x="400" y="815" text-anchor="middle" fill="#CF241D" font-family="Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" font-size="82" font-weight="900" letter-spacing="1">MY ANGER WELL!</text>
+  </g>
+</svg>

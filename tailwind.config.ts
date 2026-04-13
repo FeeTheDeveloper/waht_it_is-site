@@ -16,11 +16,15 @@ const config: Config = {
         ash: "var(--color-ash)",
         crack: "var(--color-crack)"
       },
+      fontFamily: {
+        body: ["var(--font-body)"],
+        display: ["var(--font-display)"]
+      },
       maxWidth: {
         content: "72rem"
       },
       spacing: {
-        section: "clamp(4rem, 8vw, 7rem)"
+        section: "clamp(3.75rem, 7vw, 7rem)"
       }
     }
   },

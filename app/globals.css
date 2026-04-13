@@ -3,19 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --color-ink: #0b0b0f;
+  --color-ink: #09090d;
   --color-inferno: #f25c05;
   --color-ember: #c63d0a;
   --color-warning: #f7d21e;
-  --color-ash: #f5f5f2;
+  --color-ash: #f5f2ea;
   --color-crack: #7a120b;
+  --font-display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  --font-body: "Trebuchet MS", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html,
+html {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -24,13 +31,40 @@ body {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 15% -10%, rgba(247, 210, 30, 0.18), transparent 42%),
-    radial-gradient(circle at 85% 0%, rgba(242, 92, 5, 0.16), transparent 35%),
+    radial-gradient(circle at 14% -8%, rgba(247, 210, 30, 0.17), transparent 35%),
+    radial-gradient(circle at 88% 0%, rgba(242, 92, 5, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 22%),
     var(--color-ink);
   color: var(--color-ash);
-  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.5;
   text-rendering: optimizeLegibility;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(247, 210, 30, 0.06), transparent 28%),
+    radial-gradient(circle at 8% 62%, rgba(242, 92, 5, 0.08), transparent 26%),
+    radial-gradient(circle at 86% 68%, rgba(122, 18, 11, 0.16), transparent 32%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+  opacity: 0.045;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: -1;
 }
 
 a {
@@ -50,35 +84,81 @@ h5,
 h6 {
   margin: 0;
   line-height: 1.05;
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(247, 210, 30, 0.22);
+  color: var(--color-ash);
 }
 
 .impact-grid {
   background-image:
-    linear-gradient(rgba(247, 210, 30, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(247, 210, 30, 0.09) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: radial-gradient(circle at center, black 15%, transparent 78%);
+    linear-gradient(rgba(247, 210, 30, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 210, 30, 0.07) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(circle at center, black 18%, transparent 76%);
 }
 
 .logo-placeholder::before,
 .product-placeholder::before,
-.warning-banner::before {
+.warning-banner::before,
+.section-frame::before {
   content: "";
   position: absolute;
-  inset: -2px;
+  inset: -1px;
   border-radius: inherit;
   border: 1px solid rgba(247, 210, 30, 0.2);
   pointer-events: none;
 }
 
-.logo-placeholder::after {
+.logo-placeholder::after,
+.panel-sheen::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(130deg, transparent 45%, rgba(247, 210, 30, 0.12) 52%, transparent 62%);
+  background: linear-gradient(130deg, transparent 42%, rgba(247, 210, 30, 0.12) 50%, transparent 59%);
   transform: translateX(-140%);
   animation: scan 8s linear infinite;
   pointer-events: none;
+}
+
+.warning-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(247, 210, 30, 0.18), transparent 32%),
+    linear-gradient(135deg, rgba(247, 210, 30, 0.08), transparent 36%, rgba(242, 92, 5, 0.14));
+  pointer-events: none;
+}
+
+.shopify-embed-content > * {
+  max-width: 100%;
+}
+
+.shopify-embed-content iframe,
+.shopify-embed-content video,
+.shopify-embed-content img {
+  max-width: 100%;
+}
+
+.mobile-buy-safe {
+  padding-bottom: calc(6rem + env(safe-area-inset-bottom));
 }
 
 @keyframes scan {
@@ -88,7 +168,18 @@ h6 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-placeholder::after {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .logo-placeholder::after,
+  .panel-sheen::after {
     animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .impact-grid {
+    background-size: 34px 34px;
   }
 }
