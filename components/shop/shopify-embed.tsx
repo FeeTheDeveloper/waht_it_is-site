@@ -27,11 +27,13 @@ export function ShopifyEmbed({ type, productKey, className = "" }: ShopifyEmbedP
   const isConfigured = embedCode.trim().length > 0;
 
   useEffect(() => {
-    if (!mountRef.current || !isConfigured) {
+    const mountNode = mountRef.current;
+
+    if (!mountNode || !isConfigured) {
       return;
     }
 
-    mountRef.current.innerHTML = embedCode;
+    mountNode.innerHTML = embedCode;
 
     if (!document.querySelector(`script[src="${SHOPIFY_BUY_BUTTON_SCRIPT_SRC}"]`)) {
       const script = document.createElement("script");
@@ -42,9 +44,7 @@ export function ShopifyEmbed({ type, productKey, className = "" }: ShopifyEmbedP
     }
 
     return () => {
-      if (mountRef.current) {
-        mountRef.current.innerHTML = "";
-      }
+      mountNode.innerHTML = "";
     };
   }, [embedCode, isConfigured]);
 
