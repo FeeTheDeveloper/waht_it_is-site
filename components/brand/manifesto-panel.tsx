@@ -24,15 +24,9 @@ export function ManifestoPanel({
       <div className="pointer-events-none absolute inset-0 opacity-75 [background:linear-gradient(125deg,transparent_0%,rgba(247,210,30,0.08)_48%,transparent_100%)]" />
       <div className={`relative ${compact ? "flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between" : "grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-end"}`}>
         <div className="max-w-3xl">
-          <p className="inline-flex rounded-full border border-warning/30 bg-warning/10 px-3 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-warning">
-            {label}
-          </p>
-          <p
-            className={`${compact ? "text-[clamp(2rem,4vw,3.25rem)]" : "text-[clamp(2.2rem,5vw,4.7rem)]"} mt-4 font-display font-black uppercase leading-[0.9] tracking-[0.04em] text-ash`}
-          >
-            {statement}
-          </p>
-          <p className="mt-4 max-w-2xl text-base text-ash/76 sm:text-lg">{supporting}</p>
+          <p className="eyebrow-chip">{label}</p>
+          <p className={`${compact ? "display-callout" : "display-feature"} mt-4 text-ash`}>{statement}</p>
+          <p className="body-lead mt-4 max-w-2xl">{supporting}</p>
         </div>
         {children ? (
           <div className={`${compact ? "flex flex-wrap gap-3" : "grid gap-3 sm:grid-cols-2"}`.trim()}>{children}</div>

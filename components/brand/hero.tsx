@@ -13,7 +13,10 @@ const heroSignals = [
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden border-b border-warning/15 pb-[clamp(4rem,8vw,7rem)] pt-[clamp(4.5rem,9vw,8rem)]">
+    <section
+      id="home-hero"
+      className="relative isolate overflow-hidden border-b border-warning/15 pb-[clamp(4rem,8vw,7rem)] pt-[clamp(4rem,8vw,6.75rem)]"
+    >
       <div className="impact-grid pointer-events-none absolute inset-0 opacity-25" />
       <div className="pointer-events-none absolute -left-24 top-16 h-[22rem] w-[22rem] rounded-full bg-inferno/35 blur-3xl" />
       <div className="pointer-events-none absolute right-[-60px] top-0 h-[26rem] w-[26rem] rounded-full bg-warning/20 blur-3xl" />
@@ -22,15 +25,13 @@ export function Hero() {
       <Container>
         <div className="grid items-center gap-8 lg:grid-cols-[1.12fr_0.88fr] lg:gap-14">
           <div className="relative z-10">
-            <p className="inline-flex w-fit rounded-full border border-warning/35 bg-warning/10 px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-warning/95">
-              {siteConfig.shortName} / Featured drop live
-            </p>
+            <p className="eyebrow-chip">{siteConfig.shortName} / Featured drop live</p>
             <div className="mt-6 space-y-5">
-              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-warning/70">Urban edge. Veteran-driven backbone.</p>
-              <h1 className="text-balance font-display text-[clamp(3.7rem,10vw,8.2rem)] font-black uppercase leading-[0.82] tracking-[0.03em] text-ash">
+              <p className="micro-copy text-warning/70">Urban edge. Veteran-driven backbone.</p>
+              <h1 className="display-hero text-ash">
                 No Filter. No Apologies. What It Is hits first.
               </h1>
-              <p className="max-w-2xl text-base text-ash/76 sm:text-xl">
+              <p className="body-lead max-w-2xl">
                 Streetwear built for the voices left unheard, pushed through loud enough to feel cinematic before the first checkout click.
               </p>
             </div>
@@ -46,8 +47,8 @@ export function Hero() {
                   key={signal.label}
                   className="section-frame relative overflow-hidden rounded-[1.25rem] border border-warning/15 bg-[linear-gradient(145deg,rgba(247,210,30,0.08),rgba(11,11,15,0.92))] px-4 py-4"
                 >
-                  <p className="text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-warning/75">{signal.label}</p>
-                  <p className="mt-2 text-base font-semibold uppercase tracking-[0.08em] text-ash">{signal.value}</p>
+                  <p className="meta-label">{signal.label}</p>
+                  <p className="display-kicker mt-2 text-ash">{signal.value}</p>
                 </div>
               ))}
             </div>
@@ -56,7 +57,7 @@ export function Hero() {
           <div className="relative z-10">
             <div className="logo-placeholder section-frame panel-sheen relative overflow-hidden rounded-[1.8rem] border border-warning/25 bg-[radial-gradient(circle_at_top,rgba(247,210,30,0.24),rgba(242,92,5,0.12)_34%,rgba(9,9,13,0.96)_74%)] p-4 sm:p-6">
               <div className="relative overflow-hidden rounded-[1.35rem] border border-ash/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.01))] p-5 sm:p-6">
-                <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.2em] text-warning/80">
+                <div className="micro-copy flex items-center justify-between text-warning/80">
                   <span>Brand mark</span>
                   <span>{featuredProduct.price}</span>
                 </div>
@@ -72,13 +73,13 @@ export function Hero() {
                   />
                 </div>
                 <div className="mt-5 rounded-[1.25rem] border border-warning/15 bg-black/25 p-4 backdrop-blur-sm">
-                  <p className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-warning/72">Current pressure point</p>
+                  <p className="meta-label">Current pressure point</p>
                   <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
                     <div>
-                      <p className="text-2xl font-black uppercase tracking-[0.06em] text-ash">{featuredProduct.name}</p>
-                      <p className="mt-1 text-sm text-ash/68">{featuredProduct.tagline}</p>
+                      <p className="display-card text-ash">{featuredProduct.name}</p>
+                      <p className="body-copy mt-1 text-ash/68">{featuredProduct.tagline}</p>
                     </div>
-                    <span className="rounded-full border border-warning/30 bg-warning/12 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-warning">
+                    <span className="eyebrow-chip border-warning/30 bg-warning/12 text-warning">
                       {featuredProduct.badge}
                     </span>
                   </div>

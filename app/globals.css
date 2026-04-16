@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,8 +11,6 @@
   --color-warning: #f7d21e;
   --color-ash: #f5f2ea;
   --color-crack: #7a120b;
-  --font-display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  --font-body: "Trebuchet MS", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
@@ -21,14 +21,12 @@ html {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  font-size: clamp(15px, 0.18vw + 14px, 18px);
 }
 
 body {
   padding: 0;
   margin: 0;
-}
-
-body {
   min-height: 100vh;
   background:
     radial-gradient(circle at 14% -8%, rgba(247, 210, 30, 0.17), transparent 35%),
@@ -36,8 +34,8 @@ body {
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 22%),
     var(--color-ink);
   color: var(--color-ash);
-  font-family: var(--font-body);
-  line-height: 1.5;
+  line-height: 1.65;
+  letter-spacing: normal;
   text-rendering: optimizeLegibility;
   position: relative;
   overflow-x: hidden;
@@ -76,19 +74,6 @@ p {
   margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  line-height: 1.05;
-  font-family: var(--font-display);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
 button,
 input,
 textarea,
@@ -104,6 +89,154 @@ img {
 ::selection {
   background: rgba(247, 210, 30, 0.22);
   color: var(--color-ash);
+}
+
+@layer base {
+  body {
+    @apply font-body tracking-normal antialiased;
+  }
+
+  a,
+  button,
+  input,
+  label,
+  li,
+  p,
+  select,
+  textarea {
+    @apply font-body tracking-normal;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-balance uppercase tracking-normal;
+    margin: 0;
+    line-height: 0.94;
+    font-weight: 400;
+  }
+
+  h1 {
+    font-size: clamp(4rem, 8vw, 7.5rem);
+  }
+
+  h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+  }
+
+  h3 {
+    font-size: clamp(2rem, 3.8vw, 3.25rem);
+  }
+
+  h4 {
+    font-size: clamp(1.45rem, 2.8vw, 2.2rem);
+  }
+}
+
+@layer components {
+  .eyebrow-chip {
+    @apply inline-flex w-fit rounded-full border px-3 py-1 font-body text-[0.72rem] font-semibold uppercase tracking-normal leading-none;
+    border-color: rgba(247, 210, 30, 0.3);
+    background: rgba(247, 210, 30, 0.1);
+    color: rgba(247, 210, 30, 0.95);
+  }
+
+  .display-hero,
+  .display-section,
+  .display-feature,
+  .display-callout,
+  .display-card,
+  .display-kicker {
+    @apply font-heading text-balance uppercase tracking-normal;
+    font-weight: 400;
+  }
+
+  .display-hero {
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: 0.86;
+  }
+
+  .display-section {
+    font-size: clamp(2.9rem, 5.6vw, 5rem);
+    line-height: 0.92;
+  }
+
+  .display-feature {
+    font-size: clamp(2.5rem, 4.8vw, 4.4rem);
+    line-height: 0.93;
+  }
+
+  .display-callout {
+    font-size: clamp(2rem, 4vw, 3.35rem);
+    line-height: 0.96;
+  }
+
+  .display-card {
+    font-size: clamp(1.6rem, 3vw, 2.55rem);
+    line-height: 0.98;
+  }
+
+  .display-kicker {
+    font-size: clamp(1.3rem, 2.3vw, 1.9rem);
+    line-height: 1;
+  }
+
+  .body-lead {
+    @apply font-body text-base tracking-normal sm:text-lg;
+    color: rgba(245, 242, 234, 0.76);
+    line-height: 1.72;
+  }
+
+  .body-copy {
+    @apply font-body text-sm tracking-normal sm:text-base;
+    color: rgba(245, 242, 234, 0.76);
+    line-height: 1.68;
+  }
+
+  .meta-label {
+    @apply font-body text-[0.72rem] font-semibold uppercase tracking-normal leading-none;
+    color: rgba(247, 210, 30, 0.78);
+  }
+
+  .meta-value,
+  .meta-value-accent {
+    @apply font-heading uppercase tracking-normal;
+    font-size: clamp(1.45rem, 2.5vw, 2.15rem);
+    line-height: 0.97;
+    font-weight: 400;
+  }
+
+  .meta-value {
+    @apply text-ash;
+  }
+
+  .meta-value-accent {
+    @apply text-warning;
+  }
+
+  .micro-copy {
+    @apply font-body text-[0.72rem] font-semibold uppercase tracking-normal;
+    color: rgba(245, 242, 234, 0.54);
+  }
+
+  .logo-orbit {
+    animation: logoFloat 12s ease-in-out infinite;
+  }
+
+  .enter-indicator {
+    @apply inline-flex items-center gap-2 rounded-full border px-4 py-2 font-body text-[0.8rem] font-semibold uppercase tracking-normal shadow-[0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-colors duration-200;
+    border-color: rgba(247, 210, 30, 0.25);
+    background: rgba(0, 0, 0, 0.35);
+    color: var(--color-warning);
+  }
+
+  .enter-indicator:hover {
+    border-color: rgba(247, 210, 30, 0.45);
+    color: var(--color-ash);
+  }
 }
 
 .impact-grid {
@@ -167,13 +300,25 @@ img {
   }
 }
 
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
   .logo-placeholder::after,
-  .panel-sheen::after {
+  .panel-sheen::after,
+  .logo-orbit {
     animation: none;
   }
 }
@@ -181,5 +326,9 @@ img {
 @media (max-width: 640px) {
   .impact-grid {
     background-size: 34px 34px;
+  }
+
+  .display-hero {
+    line-height: 0.92;
   }
 }

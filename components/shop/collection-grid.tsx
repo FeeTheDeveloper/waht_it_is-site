@@ -21,9 +21,9 @@ export function CollectionGrid({ products, featuredProduct, externalCartUrl }: C
       <div className="section-frame relative overflow-hidden rounded-[1.6rem] border border-warning/18 bg-[linear-gradient(145deg,rgba(247,210,30,0.08),rgba(11,11,15,0.96))] p-5 sm:p-6">
         <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-warning/85">Collection</p>
-            <h3 className="mt-3 text-3xl font-black uppercase text-ash sm:text-4xl">Current Signals</h3>
-            <p className="mt-3 max-w-2xl text-sm text-ash/70 sm:text-base">
+            <p className="meta-label text-warning/85">Collection</p>
+            <h3 className="display-callout mt-3 text-ash">Current Signals</h3>
+            <p className="body-copy mt-3 max-w-2xl text-ash/70">
               The current drop is ready for direct checkout now, while the Shopify embed modules stay standing by for live code without forcing a rebuild.
             </p>
           </div>

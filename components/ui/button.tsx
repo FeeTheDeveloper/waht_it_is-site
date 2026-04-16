@@ -29,14 +29,14 @@ const variantStyles: Record<ButtonVariant, string> = {
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  md: "min-h-11 px-5 text-[0.76rem]",
-  lg: "min-h-[3.25rem] px-6 text-[0.8rem]",
-  xl: "min-h-[3.75rem] px-8 text-[0.88rem]"
+  md: "min-h-11 px-5 text-[0.78rem]",
+  lg: "min-h-[3.25rem] px-6 text-[0.82rem]",
+  xl: "min-h-[3.75rem] px-8 text-[0.9rem]"
 };
 
 function getClasses({ className = "", variant = "primary", size = "md" }: BaseButtonProps) {
   return [
-    "inline-flex items-center justify-center rounded-full border font-display font-black uppercase leading-none tracking-[0.18em] transition-[transform,box-shadow,background-color,border-color,color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-warning focus-visible:ring-offset-2 focus-visible:ring-offset-ink disabled:pointer-events-none disabled:opacity-60",
+    "inline-flex items-center justify-center rounded-full border font-body font-semibold uppercase leading-none tracking-normal transition-[transform,box-shadow,background-color,border-color,color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-warning focus-visible:ring-offset-2 focus-visible:ring-offset-ink disabled:pointer-events-none disabled:opacity-60",
     variantStyles[variant],
     sizeStyles[size],
     className

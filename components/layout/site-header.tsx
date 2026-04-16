@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 function navItemClasses(isActive: boolean) {
   return [
-    "relative text-[0.82rem] font-semibold uppercase tracking-[0.16em] transition-colors duration-200 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:bg-warning after:transition-transform after:duration-200",
+    "relative font-body text-[0.82rem] font-semibold uppercase tracking-normal transition-colors duration-200 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:bg-warning after:transition-transform after:duration-200",
     isActive ? "text-warning after:scale-x-100" : "text-ash/72 hover:text-warning after:scale-x-0 hover:after:scale-x-100"
   ].join(" ");
 }
@@ -33,8 +33,8 @@ export function SiteHeader() {
               />
             </div>
             <div>
-              <span className="block text-lg font-black tracking-[0.18em] text-ash">{siteConfig.shortName}</span>
-              <span className="hidden text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-warning/70 sm:block">
+              <span className="display-kicker block text-ash">{siteConfig.shortName}</span>
+              <span className="micro-copy hidden text-warning/70 sm:block">
                 {siteConfig.tagline}
               </span>
             </div>
@@ -69,7 +69,7 @@ export function SiteHeader() {
                   <Link
                     href={item.href}
                     className={[
-                      "inline-flex rounded-full border px-3 py-1.5 text-[0.66rem] font-semibold uppercase tracking-[0.16em] transition-colors",
+                      "inline-flex rounded-full border px-3 py-1.5 font-body text-[0.68rem] font-semibold uppercase tracking-normal transition-colors",
                       isActive ? "border-warning/35 bg-warning/12 text-warning" : "border-ash/10 bg-ash/5 text-ash/72 hover:border-warning/28 hover:text-warning"
                     ].join(" ")}
                     aria-current={isActive ? "page" : undefined}

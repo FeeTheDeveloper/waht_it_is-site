@@ -56,20 +56,20 @@ export function ShopifyEmbed({ type, productKey, className = "" }: ShopifyEmbedP
       <div className="relative">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-warning/88">
+            <p className="meta-label text-warning/88">
               {type === "collection" ? "Shopify Collection" : "Shopify Product"}
             </p>
-            <h3 className="mt-3 text-3xl font-black uppercase text-ash sm:text-4xl">
+            <h3 className="display-callout mt-3 text-ash">
               {type === "collection" ? "Embedded Collection Surface" : `${resolvedProduct?.name ?? "Product"} Buy Button`}
             </h3>
-            <p className="mt-3 max-w-2xl text-sm text-ash/72 sm:text-base">
+            <p className="body-copy mt-3 max-w-2xl text-ash/72">
               {isConfigured
                 ? "Live Shopify embed detected. This module is still rendered client-side to keep the storefront safe from SSR mismatches."
                 : "No embed code is configured yet, so this section stays branded and conversion-ready until the live Shopify snippet is dropped in."}
             </p>
           </div>
           <span
-            className={`w-fit rounded-full border px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] ${isConfigured ? "border-warning/35 bg-warning/12 text-warning" : "border-ash/14 bg-ash/5 text-ash/66"}`}
+            className={`eyebrow-chip w-fit ${isConfigured ? "border-warning/35 bg-warning/12 text-warning" : "border-ash/14 bg-ash/5 text-ash/66"}`}
           >
             {isConfigured ? "Live" : "Ready For Embed"}
           </span>
@@ -85,17 +85,17 @@ export function ShopifyEmbed({ type, productKey, className = "" }: ShopifyEmbedP
               <div className="grid gap-5 lg:grid-cols-[1.1fr_auto] lg:items-end">
                 <div className="space-y-4">
                   <div className="flex flex-wrap gap-2">
-                    <span className="rounded-full border border-warning/25 bg-warning/10 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-warning">
+                    <span className="eyebrow-chip border-warning/25 bg-warning/10 text-warning">
                       {shopifyConfig.products.length} products ready
                     </span>
-                    <span className="rounded-full border border-ash/12 bg-ash/5 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-ash/72">
+                    <span className="eyebrow-chip border-ash/12 bg-ash/5 text-ash/72">
                       Client-side safe
                     </span>
                   </div>
                   <div>
-                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-warning/72">Branded fallback active</p>
-                    <p className="mt-2 text-3xl font-black uppercase leading-[0.94] text-ash">Collection module armed and waiting.</p>
-                    <p className="mt-3 max-w-xl text-sm text-ash/72 sm:text-base">
+                    <p className="meta-label">Branded fallback active</p>
+                    <p className="display-card mt-2 text-ash">Collection module armed and waiting.</p>
+                    <p className="body-copy mt-3 max-w-xl text-ash/72">
                       Paste the live Shopify collection embed into <code className="rounded bg-ink px-1.5 py-0.5 text-warning/90">lib/shopify-config.ts</code>
                       and this shell will flip from branded fallback to live storefront without touching the architecture.
                     </p>
@@ -116,23 +116,23 @@ export function ShopifyEmbed({ type, productKey, className = "" }: ShopifyEmbedP
               <div className="grid gap-5 lg:grid-cols-[1.1fr_auto] lg:items-end">
                 <div className="space-y-4">
                   <div className="flex flex-wrap gap-2">
-                    <span className="rounded-full border border-warning/25 bg-warning/10 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-warning">
+                    <span className="eyebrow-chip border-warning/25 bg-warning/10 text-warning">
                       {resolvedProduct.badge}
                     </span>
-                    <span className="rounded-full border border-ash/12 bg-ash/5 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-ash/72">
+                    <span className="eyebrow-chip border-ash/12 bg-ash/5 text-ash/72">
                       {resolvedProduct.availability}
                     </span>
                   </div>
                   <div>
-                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-warning/72">Branded fallback active</p>
-                    <p className="mt-2 text-3xl font-black uppercase leading-[0.94] text-ash">{resolvedProduct.name}</p>
-                    <p className="mt-3 max-w-xl text-sm text-ash/72 sm:text-base">{resolvedProduct.description}</p>
+                    <p className="meta-label">Branded fallback active</p>
+                    <p className="display-card mt-2 text-ash">{resolvedProduct.name}</p>
+                    <p className="body-copy mt-3 max-w-xl text-ash/72">{resolvedProduct.description}</p>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {resolvedProduct.highlights.slice(0, 3).map((highlight) => (
                       <span
                         key={highlight}
-                        className="rounded-full border border-warning/16 bg-warning/8 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-warning/84"
+                        className="eyebrow-chip border-warning/16 bg-warning/8 text-warning/84"
                       >
                         {highlight}
                       </span>
@@ -141,7 +141,7 @@ export function ShopifyEmbed({ type, productKey, className = "" }: ShopifyEmbedP
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <BuyNowButton checkoutUrl={resolvedProduct.checkoutUrl} label="Buy Now" size="lg" />
-                  <div className="rounded-full border border-warning/25 bg-warning/10 px-4 py-3 text-center text-lg font-black uppercase text-warning">
+                  <div className="display-kicker rounded-full border border-warning/25 bg-warning/10 px-4 py-3 text-center text-warning">
                     {resolvedProduct.price}
                   </div>
                 </div>
@@ -150,7 +150,7 @@ export function ShopifyEmbed({ type, productKey, className = "" }: ShopifyEmbedP
           </div>
         )}
 
-        <p className="mt-4 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-ash/42">
+        <p className="micro-copy mt-4 text-ash/42">
           Configure embeds in <code className="rounded bg-ink px-1.5 py-0.5 text-warning/90">lib/shopify-config.ts</code>
         </p>
       </div>

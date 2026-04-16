@@ -14,9 +14,9 @@ export function StickyBuyBar({ product, cartUrl }: StickyBuyBarProps) {
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(247,210,30,0.1),transparent_38%,rgba(242,92,5,0.12))]" />
         <div className="relative flex items-center gap-3">
           <div className="min-w-0 flex-1">
-            <p className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-warning/78">Featured drop</p>
-            <p className="mt-1 truncate text-xl font-black uppercase text-ash">{product.name}</p>
-            <p className="text-sm text-warning">{product.price}</p>
+            <p className="meta-label">Featured drop</p>
+            <p className="font-heading mt-1 truncate text-2xl uppercase tracking-normal text-ash">{product.name}</p>
+            <p className="font-heading text-lg uppercase tracking-normal text-warning">{product.price}</p>
           </div>
           <BuyNowButton checkoutUrl={product.checkoutUrl} label="Buy Now" size="lg" className="px-5" />
         </div>

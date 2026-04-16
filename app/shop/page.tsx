@@ -1,3 +1,4 @@
+import { LogoBadge } from "@/components/brand/logo-badge";
 import { ManifestoPanel } from "@/components/brand/manifesto-panel";
 import { SectionShell } from "@/components/brand/section-shell";
 import { BuyNowButton } from "@/components/shop/buy-now-button";
@@ -23,33 +24,27 @@ export default function ShopPage() {
           <div className="relative grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div className="space-y-6">
               <div className="flex flex-wrap gap-2">
-                <span className="rounded-full border border-warning/30 bg-warning/10 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-warning">
-                  Featured drop live
-                </span>
-                <span className="rounded-full border border-ash/12 bg-ash/5 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-ash/72">
-                  {shopProducts.length} products
-                </span>
+                <span className="eyebrow-chip border-warning/30 bg-warning/10 text-warning">Featured drop live</span>
+                <span className="eyebrow-chip border-ash/12 bg-ash/5 text-ash/72">{shopProducts.length} products</span>
               </div>
               <div>
-                <p className="max-w-3xl text-[clamp(2.4rem,6vw,4.9rem)] font-black uppercase leading-[0.9] text-ash">
-                  The signal is live. Wear it loud.
-                </p>
-                <p className="mt-4 max-w-2xl text-base text-ash/76 sm:text-lg">
+                <p className="display-feature max-w-3xl text-ash">The signal is live. Wear it loud.</p>
+                <p className="body-lead mt-4 max-w-2xl">
                   Move quickly through the featured tee, open the cart, or scan the whole lineup like a real custom storefront instead of a placeholder catalog.
                 </p>
               </div>
               <div className="grid gap-3 sm:grid-cols-3">
                 <div className="rounded-[1.2rem] border border-warning/18 bg-black/22 px-4 py-4">
-                  <p className="text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-warning/72">Frontline piece</p>
-                  <p className="mt-2 text-base font-semibold uppercase tracking-[0.08em] text-ash">{featuredProduct.name}</p>
+                  <p className="meta-label">Frontline piece</p>
+                  <p className="display-kicker mt-2 text-ash">{featuredProduct.name}</p>
                 </div>
                 <div className="rounded-[1.2rem] border border-warning/18 bg-black/22 px-4 py-4">
-                  <p className="text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-warning/72">Price</p>
-                  <p className="mt-2 text-base font-semibold uppercase tracking-[0.08em] text-ash">{featuredProduct.price}</p>
+                  <p className="meta-label">Price</p>
+                  <p className="display-kicker mt-2 text-ash">{featuredProduct.price}</p>
                 </div>
                 <div className="rounded-[1.2rem] border border-warning/18 bg-black/22 px-4 py-4">
-                  <p className="text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-warning/72">Colorways</p>
-                  <p className="mt-2 text-base font-semibold uppercase tracking-[0.08em] text-ash">{featuredProduct.colorways.length} live</p>
+                  <p className="meta-label">Colorways</p>
+                  <p className="display-kicker mt-2 text-ash">{featuredProduct.colorways.length} live</p>
                 </div>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -65,25 +60,28 @@ export default function ShopPage() {
               </div>
             </div>
 
-            <div className="rounded-[1.5rem] border border-ash/12 bg-black/24 p-5 backdrop-blur-sm sm:p-6">
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-warning/78">Current pressure point</p>
-              <p className="mt-3 text-3xl font-black uppercase leading-[0.94] text-ash sm:text-4xl">{featuredProduct.name}</p>
-              <p className="mt-3 text-sm text-ash/72 sm:text-base">{featuredProduct.tagline}</p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {featuredProduct.highlights.map((highlight) => (
-                  <span
-                    key={highlight}
-                    className="rounded-full border border-warning/16 bg-warning/8 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-warning/84"
-                  >
-                    {highlight}
-                  </span>
-                ))}
-              </div>
-              <div className="mt-6 rounded-[1.2rem] border border-warning/16 bg-warning/8 px-4 py-4">
-                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-warning/72">Why it leads</p>
-                <p className="mt-2 text-sm text-ash/72">
-                  It carries the cleanest buy path, the real collage image, and the strongest visual pressure across the storefront.
-                </p>
+            <div className="grid gap-5">
+              <LogoBadge
+                title="The logo stays in the storefront."
+                description="A lighter brand hit keeps recognition high while the product and checkout path stay in front."
+              />
+              <div className="rounded-[1.5rem] border border-ash/12 bg-black/24 p-5 backdrop-blur-sm sm:p-6">
+                <p className="meta-label text-warning/78">Current pressure point</p>
+                <p className="display-card mt-3 text-ash">{featuredProduct.name}</p>
+                <p className="body-copy mt-3 text-ash/72">{featuredProduct.tagline}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {featuredProduct.highlights.map((highlight) => (
+                    <span key={highlight} className="eyebrow-chip border-warning/16 bg-warning/8 text-warning/84">
+                      {highlight}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-6 rounded-[1.2rem] border border-warning/16 bg-warning/8 px-4 py-4">
+                  <p className="meta-label">Why it leads</p>
+                  <p className="body-copy mt-2 text-ash/72">
+                    It carries the cleanest buy path, the real collage image, and the strongest visual pressure across the storefront.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -138,11 +136,11 @@ export default function ShopPage() {
         <div className="section-frame relative overflow-hidden rounded-[1.75rem] border border-warning/25 bg-[linear-gradient(150deg,rgba(247,210,30,0.12),rgba(242,92,5,0.08),rgba(11,11,15,0.96))] p-6 sm:p-8">
           <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-warning/78">Last chance prompt</p>
-              <p className="mt-3 max-w-2xl text-[clamp(2.1rem,5vw,4.2rem)] font-black uppercase leading-[0.92] text-ash">
+              <p className="meta-label text-warning/78">Last chance prompt</p>
+              <p className="display-feature mt-3 max-w-2xl text-ash">
                 Lock in {featuredProduct.name} or keep scanning the drop.
               </p>
-              <p className="mt-4 max-w-2xl text-base text-ash/74 sm:text-lg">
+              <p className="body-lead mt-4 max-w-2xl text-ash/74">
                 The featured checkout stays hot, the cart is one tap away, and the collection remains easy to browse without dead space on mobile.
               </p>
             </div>

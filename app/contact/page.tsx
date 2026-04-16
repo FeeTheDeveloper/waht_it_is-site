@@ -12,8 +12,8 @@ export default function ContactPage() {
       >
         <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
           <article className="rounded-2xl border border-warning/30 bg-[linear-gradient(150deg,rgba(247,210,30,0.12),rgba(198,61,10,0.08),rgba(11,11,15,0.94))] p-6 sm:p-8">
-            <h3 className="text-2xl font-black uppercase text-ash">Direct Contact</h3>
-            <p className="mt-3 text-ash/80">Email: {siteConfig.email}</p>
+            <h3 className="display-card text-ash">Direct Contact</h3>
+            <p className="body-copy mt-3 text-ash/80">Email: {siteConfig.email}</p>
             <div className="mt-6">
               <Button href={`mailto:${siteConfig.email}`} size="lg">
                 Email the Brand
@@ -22,11 +22,11 @@ export default function ContactPage() {
           </article>
 
           <article className="rounded-2xl border border-ash/15 bg-ink/80 p-6 sm:p-8">
-            <h3 className="text-xl font-black uppercase text-warning">Social Signals</h3>
-            <ul className="mt-4 space-y-2 text-sm uppercase tracking-[0.12em] text-ash/75">
-              <li>Instagram — @whatitisclothing</li>
-              <li>TikTok — @whatitisclothing</li>
-              <li>Threads — @whatitisclothing</li>
+            <h3 className="display-kicker text-warning">Social Signals</h3>
+            <ul className="mt-4 space-y-2 text-sm uppercase tracking-normal text-ash/75">
+              <li>Instagram - @whatitisclothing</li>
+              <li>TikTok - @whatitisclothing</li>
+              <li>Threads - @whatitisclothing</li>
             </ul>
           </article>
         </div>

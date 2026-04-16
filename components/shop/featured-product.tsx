@@ -29,43 +29,43 @@ export function FeaturedProduct({
       <div className="relative grid gap-8 xl:grid-cols-[0.96fr_1.04fr] xl:items-center">
         <div className="space-y-6">
           <div className="flex flex-wrap gap-2">
-            <span className="rounded-full border border-warning/35 bg-warning/10 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-warning">
+            <span className="eyebrow-chip border-warning/35 bg-warning/10 text-warning">
               {product.badge}
             </span>
-            <span className="rounded-full border border-ash/15 bg-ash/5 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-ash/78">
+            <span className="eyebrow-chip border-ash/15 bg-ash/5 text-ash/78">
               {product.availability}
             </span>
           </div>
           <div className="space-y-4">
-            <h3 className="font-display text-4xl font-black uppercase leading-[0.92] tracking-[0.05em] text-ash sm:text-5xl">
-              {product.name}
-            </h3>
-            <p className="max-w-xl text-base text-ash/78 sm:text-lg">{product.description}</p>
+            <h3 className="display-callout text-ash">{product.name}</h3>
+            <p className="body-lead max-w-xl text-ash/78">{product.description}</p>
           </div>
           <div className="rounded-[1.35rem] border border-warning/18 bg-black/22 p-5">
-            <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-warning/75">Graphic hit</p>
-            <p className="mt-3 text-2xl font-black uppercase leading-[0.92] text-ash sm:text-3xl">{product.graphicText[0]}</p>
-            <p className="mt-1 text-xl font-black uppercase leading-[0.96] text-warning sm:text-2xl">{product.graphicText[1]}</p>
+            <p className="meta-label">Graphic hit</p>
+            <p className="display-card mt-3 text-ash">{product.graphicText[0]}</p>
+            <p className="display-kicker mt-1 text-warning">{product.graphicText[1]}</p>
           </div>
           <div className="grid gap-3 sm:grid-cols-3">
             <div className="section-frame relative overflow-hidden rounded-[1.2rem] border border-warning/15 bg-black/20 px-4 py-4">
-              <p className="text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-warning/72">Price</p>
-              <p className="mt-2 text-2xl font-black uppercase text-warning">{product.price}</p>
+              <p className="meta-label">Price</p>
+              <p className="meta-value-accent mt-2">{product.price}</p>
             </div>
             <div className="section-frame relative overflow-hidden rounded-[1.2rem] border border-warning/15 bg-black/20 px-4 py-4">
-              <p className="text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-warning/72">Colorways</p>
-              <p className="mt-2 text-base font-semibold uppercase tracking-[0.08em] text-ash">{product.colorways.length || 1} live</p>
+              <p className="meta-label">Colorways</p>
+              <p className="display-kicker mt-2 text-ash">{product.colorways.length || 1} live</p>
             </div>
             <div className="section-frame relative overflow-hidden rounded-[1.2rem] border border-warning/15 bg-black/20 px-4 py-4">
-              <p className="text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-warning/72">Build</p>
-              <p className="mt-2 text-base font-semibold uppercase tracking-[0.08em] text-ash">{product.highlights[0]}</p>
+              <p className="meta-label">Build</p>
+              <p className="display-kicker mt-2 text-ash">{product.highlights[0]}</p>
             </div>
           </div>
           <ProductColorways colorways={product.colorways} compact title="Available colorways" />
           <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
             <div>
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-warning/72">Direct checkout</p>
-              <p className="mt-1 text-sm text-ash/68">Short path to purchase, cleaner hierarchy, and a real product surface instead of a placeholder card.</p>
+              <p className="meta-label">Direct checkout</p>
+              <p className="body-copy mt-1 text-ash/68">
+                Short path to purchase, cleaner hierarchy, and a real product surface instead of a placeholder card.
+              </p>
             </div>
             <div className="flex flex-wrap gap-3">
               <BuyNowButton checkoutUrl={product.checkoutUrl} label={primaryLabel} size="lg" />
@@ -92,13 +92,13 @@ export function FeaturedProduct({
             />
           </div>
           <div className="absolute bottom-5 left-5 right-5 rounded-[1.2rem] border border-warning/15 bg-black/45 p-4 backdrop-blur-sm">
-            <p className="text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-warning/72">Main drop pressure</p>
+            <p className="meta-label">Main drop pressure</p>
             <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
               <div>
-                <p className="text-2xl font-black uppercase leading-none text-ash">{product.name}</p>
-                <p className="mt-1 text-sm text-ash/68">{product.tagline}</p>
+                <p className="display-card text-ash">{product.name}</p>
+                <p className="body-copy mt-1 text-ash/68">{product.tagline}</p>
               </div>
-              <span className="rounded-full border border-warning/30 bg-warning/12 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-warning">
+              <span className="eyebrow-chip border-warning/30 bg-warning/12 text-warning">
                 {product.colorways.length} colorways
               </span>
             </div>

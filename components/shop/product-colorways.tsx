@@ -21,8 +21,8 @@ export function ProductColorways({
   return (
     <section className={`space-y-3 ${className}`.trim()}>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-warning/82">{title}</p>
-        <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-ash/48">{colorways.length} colorways</p>
+        <p className="meta-label text-warning/82">{title}</p>
+        <p className="micro-copy">{colorways.length} colorways</p>
       </div>
 
       {compact ? (
@@ -33,7 +33,7 @@ export function ProductColorways({
               className="inline-flex items-center gap-2 rounded-full border border-warning/16 bg-warning/8 px-3 py-2"
             >
               <span className="h-3.5 w-3.5 rounded-full border border-ash/25" style={{ backgroundColor: colorway.swatch }} />
-              <span className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-ash">{colorway.name}</span>
+              <span className="font-body text-[0.74rem] font-semibold uppercase tracking-normal text-ash">{colorway.name}</span>
             </div>
           ))}
         </div>
@@ -64,8 +64,8 @@ export function ProductColorways({
               <div className="mt-4 flex items-center gap-3">
                 <span className="h-4 w-4 rounded-full border border-ash/25" style={{ backgroundColor: colorway.swatch }} />
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-ash">{colorway.name}</p>
-                  <p className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-warning/75">{colorway.accent}</p>
+                  <p className="font-heading text-xl uppercase tracking-normal text-ash">{colorway.name}</p>
+                  <p className="micro-copy mt-1 text-warning/75">{colorway.accent}</p>
                 </div>
               </div>
             </article>

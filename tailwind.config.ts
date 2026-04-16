@@ -17,8 +17,12 @@ const config: Config = {
         crack: "var(--color-crack)"
       },
       fontFamily: {
-        body: ["var(--font-body)"],
-        display: ["var(--font-display)"]
+        heading: ['"Bebas Neue"', "sans-serif"],
+        body: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ['"Bebas Neue"', "sans-serif"]
+      },
+      letterSpacing: {
+        snug: "-0.015em"
       },
       maxWidth: {
         content: "72rem"
