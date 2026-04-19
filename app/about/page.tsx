@@ -1,90 +1,85 @@
-import { LogoBadge } from "@/components/brand/logo-badge";
-import { ManifestoPanel } from "@/components/brand/manifesto-panel";
 import { SectionShell } from "@/components/brand/section-shell";
-import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/site";
 
 export default function AboutPage() {
   return (
     <>
-      <SectionShell
-        eyebrow="About"
-        title="Built to be felt."
-        description={siteConfig.brandStatement}
-      >
-        <div className="grid gap-5 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
-          <LogoBadge
-            title="The mark still leads the room."
-            description="A smaller signal carry for the brand story, so the cracked-face logo stays present without overwhelming the page."
-          />
-          <div className="section-frame relative overflow-hidden rounded-[1.7rem] border border-warning/22 bg-[radial-gradient(circle_at_top,rgba(247,210,30,0.18),rgba(198,61,10,0.1),rgba(11,11,15,0.95))] p-7 sm:p-9">
-            <p className="display-feature max-w-4xl text-ash">
-              What It Is is not built to blend in. It is built to signal exactly who you are when the room gets quiet.
+      <SectionShell eyebrow="ABOUT" title="ABOUT WHAT IT IS" description="">
+        <div className="section-frame rounded-[1.7rem] border border-warning/24 bg-[radial-gradient(circle_at_top,rgba(247,210,30,0.16),rgba(198,61,10,0.1),rgba(11,11,15,0.95))] p-7 sm:p-9">
+          <p className="display-kicker text-warning">CORE IDENTITY</p>
+          <div className="mt-5 space-y-3">
+            <p className="body-lead text-ash">
+              What It Is Clothing LLC is an urban lifestyle apparel brand rooted in authenticity, cultural expression, and lived experience.
             </p>
+            <p className="display-kicker text-ash">We don’t design for trends.</p>
+            <p className="display-kicker text-ash">We design for reality.</p>
+            <p className="body-copy text-ash/85">Every piece represents identity, resilience, and the voices that don’t always get heard.</p>
           </div>
         </div>
       </SectionShell>
 
-      <SectionShell
-        eyebrow={siteConfig.manifesto.label}
-        title="The mission stays loud on purpose."
-        description="The About page should carry the identity story with the same pressure as the storefront."
-      >
-        <ManifestoPanel label={siteConfig.manifesto.label} statement={siteConfig.manifesto.statement} supporting={siteConfig.manifesto.support}>
-          <div className="rounded-[1.2rem] border border-warning/18 bg-black/25 px-4 py-4">
-            <p className="meta-label">Mission</p>
-            <p className="display-kicker mt-2 text-ash">Voices left unheard</p>
+      <SectionShell eyebrow="BRAND" title="Difference" description="">
+        <article className="section-frame rounded-[1.3rem] border border-warning/20 bg-[linear-gradient(145deg,rgba(247,210,30,0.09),rgba(11,11,15,0.95))] p-6 sm:p-7">
+          <p className="display-kicker text-warning">DIFFERENCE</p>
+          <div className="mt-4 space-y-3">
+            <p className="display-kicker text-ash">This brand isn’t just about what you wear.</p>
+            <p className="display-kicker text-ash">It’s about what you stand on.</p>
+            <p className="body-copy text-ash/85">
+              We create bold, message-driven apparel that allows people to express perspective, pride, and purpose without saying a word.
+            </p>
           </div>
-          <div className="rounded-[1.2rem] border border-warning/18 bg-black/25 px-4 py-4">
-            <p className="meta-label">Support</p>
-            <p className="display-kicker mt-2 text-ash">{siteConfig.manifesto.support}</p>
-          </div>
-        </ManifestoPanel>
+        </article>
       </SectionShell>
 
-      <SectionShell
-        eyebrow="Mission"
-        title="Urban edge. Veteran-driven backbone."
-        description="The brand mission needs to feel disciplined, emotional, and direct all at once."
-      >
-        <div className="grid gap-4 md:grid-cols-3">
-          <article className="section-frame relative overflow-hidden rounded-[1.3rem] border border-warning/16 bg-[linear-gradient(145deg,rgba(247,210,30,0.08),rgba(11,11,15,0.94))] p-6">
-            <h3 className="display-kicker text-warning">Emotion</h3>
-            <p className="body-copy mt-3 text-ash/76">
-              Every garment starts with pressure, presence, and a refusal to make safe background clothing.
+      <SectionShell eyebrow="ORIGIN" title="Founder" description="">
+        <article className="section-frame rounded-[1.3rem] border border-warning/20 bg-[linear-gradient(145deg,rgba(247,210,30,0.09),rgba(11,11,15,0.95))] p-6 sm:p-7">
+          <p className="display-kicker text-warning">FOUNDER</p>
+          <div className="mt-4 space-y-3">
+            <p className="display-kicker text-ash">This brand is personal.</p>
+            <p className="body-copy text-ash/85">
+              Built by a combat veteran, What It Is Clothing comes from real experience — discipline, sacrifice, unity, and division across different environments.
             </p>
-          </article>
-          <article className="section-frame relative overflow-hidden rounded-[1.3rem] border border-warning/16 bg-[linear-gradient(145deg,rgba(247,210,30,0.08),rgba(11,11,15,0.94))] p-6">
-            <h3 className="display-kicker text-warning">Service</h3>
-            <p className="body-copy mt-3 text-ash/76">
-              Veteran-driven means the build carries discipline, intention, and a sharper sense of responsibility.
-            </p>
-          </article>
-          <article className="section-frame relative overflow-hidden rounded-[1.3rem] border border-warning/16 bg-[linear-gradient(145deg,rgba(247,210,30,0.08),rgba(11,11,15,0.94))] p-6">
-            <h3 className="display-kicker text-warning">Identity</h3>
-            <p className="body-copy mt-3 text-ash/76">
-              This is more than clothing. It is the uniform for people who move loud and refuse to be muted.
-            </p>
-          </article>
-        </div>
+            <p className="body-copy text-ash/85">Every individual carries a voice that deserves to be seen, heard, and respected.</p>
+          </div>
+        </article>
       </SectionShell>
 
-      <SectionShell
-        eyebrow="Attitude"
-        title="No quiet mode."
-        description="The visuals stay gritty, the message stays direct, and the CTA stays close."
-      >
-        <div className="warning-banner section-frame relative overflow-hidden rounded-[1.7rem] border border-warning/28 bg-[linear-gradient(130deg,rgba(247,210,30,0.15),rgba(198,61,10,0.12),rgba(11,11,15,0.95))] p-8 sm:p-10">
-          <div className="relative flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="display-feature text-ash">Wear your signal. Let the room feel it.</p>
-              <p className="body-lead mt-4 max-w-2xl">{siteConfig.brandStatement}</p>
+      <SectionShell eyebrow="POSITION" title="Bridge" description="">
+        <article className="section-frame rounded-[1.3rem] border border-warning/20 bg-[linear-gradient(145deg,rgba(247,210,30,0.09),rgba(11,11,15,0.95))] p-6 sm:p-7">
+          <p className="display-kicker text-warning">BRIDGE</p>
+          <div className="mt-4 space-y-3">
+            <p className="body-copy text-ash/85">What It Is Clothing stands at the intersection of military experience and urban culture.</p>
+            <p className="display-kicker text-ash">Different backgrounds.</p>
+            <p className="display-kicker text-ash">Same foundation.</p>
+            <div className="pt-1 space-y-2">
+              <p className="display-kicker text-ash">Resilience.</p>
+              <p className="display-kicker text-ash">Loyalty.</p>
+              <p className="display-kicker text-ash">Identity.</p>
             </div>
-            <Button href="/shop" size="xl">
-              Enter The Shop
-            </Button>
           </div>
-        </div>
+        </article>
+      </SectionShell>
+
+      <SectionShell eyebrow="PURPOSE" title="Mission" description="">
+        <article className="warning-banner section-frame rounded-[1.7rem] border border-warning/28 bg-[linear-gradient(130deg,rgba(247,210,30,0.15),rgba(198,61,10,0.12),rgba(11,11,15,0.95))] p-7 sm:p-9">
+          <p className="display-kicker text-warning">MISSION</p>
+          <div className="mt-4 space-y-3">
+            <p className="display-kicker text-ash">We are the only urban and veteran-driven clothing brand built for the voices left unheard.</p>
+            <p className="display-feature text-ash">Your voice is heard here.</p>
+          </div>
+        </article>
+      </SectionShell>
+
+      <SectionShell eyebrow="STATEMENT" title="Final" description="">
+        <article className="section-frame rounded-[1.3rem] border border-warning/20 bg-[linear-gradient(145deg,rgba(247,210,30,0.09),rgba(11,11,15,0.95))] p-6 sm:p-7">
+          <p className="display-kicker text-warning">FINAL</p>
+          <div className="mt-4 space-y-2">
+            <p className="display-kicker text-ash">This is more than clothing.</p>
+            <p className="display-kicker text-ash">This is a statement.</p>
+            <p className="display-feature text-ash">Strength.</p>
+            <p className="display-feature text-ash">Truth.</p>
+            <p className="display-feature text-ash">The voice of the unheard.</p>
+          </div>
+        </article>
       </SectionShell>
     </>
   );
